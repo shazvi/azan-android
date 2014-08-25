@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright 2013 The Android Open Source Project
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+    <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/coreLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top">
+
+        <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+            <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/mainline1"
+                        android:textAlignment="inherit"
+                        android:typeface="serif"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:paddingTop="10dp"
+                        android:layout_column="0"
+                        android:paddingBottom="10dp"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:onClick="pauseaudio">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/mainline2"
+                        android:textIsSelectable="false"
+                        android:textStyle="italic"
+                        android:onClick="pauseaudio"
+                        android:layout_below="@+id/mainline1"
+                        android:layout_alignParentStart="true"
+                        android:layout_column="0"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Azan Volume:"
+                        android:id="@+id/textView"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:paddingTop="20dp"
+                        android:layout_column="0"
+                        android:paddingLeft="5dp"/>
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                <SeekBar
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="false"
+                        android:id="@+id/volumebar"
+                        android:labelFor="@+id/textView"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_toRightOf="@+id/textView"
+                        android:layout_column="0"
+                        android:paddingLeft="20dp"/>
+            </TableRow>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="379dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Play Azan:"
+                        android:id="@+id/textView2"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_column="0"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"/>
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                    <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Play"
+                            android:id="@+id/toggazanplay"
+                            android:layout_alignParentTop="true"
+                            android:layout_toLeftOf="@+id/toggazanstop"
+                            android:onClick="playotheraudio"
+                            android:layout_column="0"
+                            />
+
+                    <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Stop"
+                            android:id="@+id/toggazanstop"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:onClick="pauseaudio"
+                            android:layout_column="1"
+                            />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </TableLayout>
+    </ScrollView>
+

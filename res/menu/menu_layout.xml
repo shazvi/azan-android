@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:title="Times"
+            android:showAsAction="ifRoom"
+            android:id="@+id/times">
+        <menu>
+            <item android:title=""
+                  android:checkable="false"
+                  android:id="@+id/subah"/>
+            <item android:title=""
+                  android:checkable="false"
+                  android:id="@+id/sunrise"/>
+            <item android:title=""
+                  android:checkable="false"
+                  android:id="@+id/dhuhr"/>
+            <item android:title=""
+                  android:checkable="false"
+                  android:id="@+id/asr"/>
+            <item android:title=""
+                  android:checkable="false"
+                  android:id="@+id/maghrib"/>
+            <item android:title=""
+                  android:checkable="false"
+                  android:id="@+id/isha"/>
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="all">
+        <item android:id="@+id/notifswitch"
+              android:title="Show Notifications"
+              android:onClick="notifstatechanged"/>
+        <item android:id="@+id/azanswitch"
+              android:title="Play Azan"
+              android:onClick="azanstatechanged"/>
+        <item android:id="@+id/iconswitch"
+              android:title="Show Notif. Icon"
+              android:onClick="iconstatechanged"/>
+        <item android:id="@+id/startswitch"
+              android:title="Startup"
+              android:onClick="startstatechanged"/>
+    </group>
+</menu>
