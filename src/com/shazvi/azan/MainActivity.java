@@ -1,6 +1,6 @@
 package com.shazvi.azan;
 /* TODO:
- * fix persistence-try services
+ * run in background
  * start at startup
  * fix fajr azan
  */
@@ -104,6 +104,7 @@ public class MainActivity extends Activity {
 		((SeekBar) findViewById(R.id.volumebar)).setProgress(sharedPref.getInt("azanvolume", 50));
 
 		alarm.SetAlarm(this.getApplicationContext());
+        startService(new Intent(MainActivity.this, MyService.class));
 	}
 
 	public class Alarm extends BroadcastReceiver{
@@ -133,6 +134,32 @@ public class MainActivity extends Activity {
             calculate((TextView)findViewById(R.id.mainline1), (TextView)findViewById(R.id.mainline2), MainActivity.this);
 		}
 	}
+
+    public static class MyService extends IntentService {
+        protected void onHandleIntent (Intent intent){
+
+        }
+
+        public MyService() {
+            super("MyService");
+        }
+
+        @Override public IBinder onBind(Intent intent) {
+            return null;
+        }
+
+        @Override public void onCreate() {
+            Log.d(MYTAG, "onCreate");
+        }
+
+        @Override public void onDestroy() {
+
+        }
+
+        @Override public void onStart (Intent intent, int startid) {
+            Log.d(MYTAG, "onStart");
+        }
+    }
 
 	@Override protected void onStart() {
 		super.onStart();

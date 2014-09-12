@@ -25,6 +25,6 @@
         </activity>
 
         <service android:name="com.shazvi.azan.MainActivity$MyService" />
-        <!--<receiver android:name="com.shazvi.azan.MainActivity$Alarm"/> android:process=":remote"-->
+        <receiver android:name="com.shazvi.azan.MainActivity$Alarm"/><!-- android:process=":remote"-->
     </application>
 </manifest>
