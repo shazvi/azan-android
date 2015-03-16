@@ -1,5 +1,6 @@
 package com.shazvi.azan;
 /* TODO:
+ * work on this after buying new phone
  * run in background
  * start at startup
  * fix fajr azan
@@ -156,8 +157,9 @@ public class MainActivity extends Activity {
 
         }
 
-        @Override public void onStart (Intent intent, int startid) {
+        @Override public int onStartCommand (Intent intent, int flags, int startid) {
             Log.d(MYTAG, "onStart");
+            return Service.START_NOT_STICKY;
         }
     }
 
